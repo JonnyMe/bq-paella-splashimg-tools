@@ -152,6 +152,10 @@ def create_splash(new_splashimg, splash_picture, fastboot_picture):
 		splash_picture_matrix = rgb_to_brgle_bytes(splash_picture)
 		splash_picture_size = len(splash_picture_matrix)
 
+		if splash_picture_size > SPLASH_MAX_SIZE:
+			print("%s too big (actual:%d, max:%d), abort" % (splash_picture, splash_picture_size, SPLASH_MAX_SIZE))
+			exit()
+
 		for index in range(0, splash_picture_size):
 			f_out.write(splash_picture_matrix[index].to_bytes(1, sys.byteorder))
 	else:
@@ -167,6 +171,10 @@ def create_splash(new_splashimg, splash_picture, fastboot_picture):
 	if fastboot_picture:
 		fastboot_picture_matrix = rgb_to_brgle_bytes(fastboot_picture)
 		fastboot_picture_size = len(fastboot_picture_matrix)
+
+		if fastboot_picture_size > BOOTLOADER_MAX_SIZE:
+			print("%s too big (actual:%d, max:%d), abort" % (fastboot_picture, fastboot_picture_size, BOOTLOADER_MAX_SIZE))
+			exit()
 		
 		for index in range(0, fastboot_picture_size):
 			f_out.write(fastboot_picture_matrix[index].to_bytes(1, sys.byteorder))
