@@ -1,12 +1,15 @@
 # bq-paella-splashimg-tools
-Tool to analize, extract and create BQ Aquaris X5 Cyanogen Edition splash.img
+Tool to analyze, extract and create BQ Aquaris X5 Cyanogen Edition splash.img
+
+## !!! WARNING !!!
+This tool is intended to generate a splash.img for the BQ Aquaris X5 Cyanogen Edition (paella). BQ Aquaris X5 (picmt) has another splash.img format which is different from this one
 
 ## Overview
 Files in this project are all useful to make the tool work (except from the demo directory). The `splash.img` file already present is a copy of the original splash.img from paella firmware ([https://storage.googleapis.com/support-files.bq.com/Bootloader/Cyanogen%20OS/cm-13.1.4-ZNH2KAS5FE-paella-signed-fastboot-a6851b4fbe.zip](https://storage.googleapis.com/support-files.bq.com/Bootloader/Cyanogen%20OS/cm-13.1.4-ZNH2KAS5FE-paella-signed-fastboot-a6851b4fbe.zip))
 
 ## Usage
 
-### Analize splash.img:
+### Analyze splash.img:
 ```
 ./paella_splashimg_tools.py -a splash.img
 ```
